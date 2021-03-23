@@ -1,8 +1,7 @@
 import sys
 sys.path.append("..")
 sys.setrecursionlimit(1000000)
-from utils.random_list import random_list
-from utils.time_test import time_test
+import utils.utils as util
 
 def merge(left,right):
     res=[]
@@ -28,9 +27,9 @@ def _merge_sort(li):
         return merge(left_list,right_list)
     return merge(left,right)
 
-@time_test
+@util.time_test
 def merge_sort(li):
     _merge_sort(li)
 
-li=random_list(1000000)
+li=util.random_list(1000000)
 merge_sort(li)

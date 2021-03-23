@@ -1,6 +1,6 @@
 import sys
 sys.path.append("..") # add utils directory into python system path
-from utils.time_test import time_test
+import utils.utils as util
 
 # partition function
 def partition(li,low,high):
@@ -23,7 +23,7 @@ def _quick_sort(li,low,high):
         _quick_sort(li,low,mid-1)
         _quick_sort(li,mid+1,high)
 
-@time_test
+@util.time_test
 def quick_sort(li):
     left=0
     right = len(li)-1

@@ -1,7 +1,6 @@
 import sys
 sys.path.append("..") # add utils directory into python system path
-from utils.time_test import time_test
-from utils.random_list import random_list
+import utils.utils as util
 
 def swap(li,i,j):
     li[i],li[j]=li[j],li[i]
@@ -12,9 +11,9 @@ def bubble_sort(li):
     for i in range(n-1):
         for j in range(n-1-i):
             if(li[j]>li[j+1]):
-                swap(li,j+1,j)
+                util.swap(li,j+1,j)
 
-li = random_list(1000000)
+li = util.random_list(1000000)
 
 bubble_sort(li)
 
